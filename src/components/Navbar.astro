@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+const links = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Kurikulum",
+    href: "/kurikulum",
+  },
+  {
+    name: "Biaya",
+    href: "/biaya",
+  },
+  {
+    name: "Testimoni",
+    href: "/testimoni",
+  },
+  {
+    name: "Profil",
+    href: "/profil",
+  },
+];
+
+const activeLink = Astro.url.pathname;
+---
+
+<nav class="w-full absolute z-20 py-2 flex items-center top-0 left-0">
+  <div
+    class="container p-4 border-b-2 border-indigo-200 items-center flex justify-between mx-auto w-full md:max-w-6xl bg-white/60"
+    id="container"
+  >
+    <div class="flex items-center gap-4">
+      <Image src="/logo.png" width={50} height={50} alt="" />
+      <h1 class="text-xl font-bold font-['Figtree']">Hamsa Education</h1>
+    </div>
+    <div
+      class="w-auto px-3 py-[3px] justify-center items-center gap-6 inline-flex"
+    >
+      <div
+        class=`text-md font-medium font-['Figtree'] ${activeLink === "/" ? "text-amber-500 transition-all duration-300" : ""}`
+      >
+        Home
+      </div>
+      <div
+        class=`text-md font-medium font-['Figtree'] ${activeLink === "/kurikulum" ? "text-amber-500 transition-all duration-300" : ""}`
+      >
+        Kurikulum
+      </div>
+      <div
+        class=`text-md font-medium font-['Figtree'] ${activeLink === "/biaya" ? "text-amber-500 transition-all duration-300" : ""}`
+      >
+        Biaya
+      </div>
+      <div class="text-md font-medium font-['Figtree']">Testimoni</div>
+      <div class="text-md font-medium font-['Figtree']">Profil</div>
+      <div class="text-md font-medium font-['Figtree']">Kontak</div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const container = document.querySelector("#container");
+  const navbar = document.querySelector("nav");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      container.classList.add("rounded-t-lg");
+      container.classList.add("shadow-lg");
+      container.classList.add("backdrop-blur-lg");
+      navbar.classList.remove("absolute");
+      navbar.classList.add("fixed");
+      navbar.classList.add("animate-slideIn");
+      navbar.classList.add("transition-all");
+    } else {
+      container.classList.remove("rounded-t-lg");
+      container.classList.remove("shadow-lg");
+      container.classList.remove("backdrop-blur-lg");
+      navbar.classList.add("absolute");
+      navbar.classList.remove("fixed");
+      navbar.classList.remove("animate-slideIn");
+      navbar.classList.remove("transition-all");
+    }
+  });
+</script>

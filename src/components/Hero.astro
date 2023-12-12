@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div class="container h-[500px] mx-auto md:max-w-6xl flex justify-around">
+  <div class="font-['Figtree'] items-center justify-center w-1/2 self-center">
+    <div class="relative z-10 space-y-4">
+      <Image
+        src={"/Ornament 77.png"}
+        width={100}
+        height={100}
+        alt=""
+        class="relative top-[90px] -left-4 -z-[99]"
+      />
+      <h1 class="text-5xl w-[500px] font-black leading-[77px] px-4">
+        Hamsa Education
+      </h1>
+      <h3 class="text-3xl leading-[38px]">
+        Membangun masa depan terbaik untuk anak anda bersama kami
+      </h3>
+      <button class="py-2 px-4 bg-amber-500 rounded-lg text-white"
+        >Pesan Sekarang</button
+      >
+    </div>
+  </div>
+  <div class="items-center justify-center flex flex-1">
+    <Image src="/hero.png" width={700} height={700} alt="" />
+    <Image
+      src={"/Ornament 5 (1).png"}
+      width={100}
+      height={100}
+      alt=""
+      class="absolute top-[164px] right-[580px] -z-[99]"
+    />
+    <Image
+      src={"/Ornament 21.png"}
+      width={300}
+      height={300}
+      alt=""
+      class="absolute top-[154px] rigth-[143px] -z-[99]"
+    />
+    <Image
+      src="/Gradient (2).png"
+      width={300}
+      height={300}
+      alt=""
+      class="absolute top-[200px] rigth-[143px] -z-[99]"
+    />
+  </div>
+</div>
